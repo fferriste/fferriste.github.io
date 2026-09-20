@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="正道思达官网 - 专业提供企业数字化转型解决方案、ERP系统定制开发及云服务技术支持。致力于帮助中小企业实现业务流程优化与数据价值挖掘。">
+    <meta name="keywords" content="正道思达,数字化转型,ERP系统,企业管理软件,云服务,软件开发">
+    <title>正道思达-企业数字化转型与ERP系统解决方案提供商</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0f4c81; /* 经典的商务蓝 */
+            --secondary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-light: #f8f9fa;
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .cta-btn:hover {
+            background-color: #0a3d6b;
+            color: var(--white) !important;
+        }
+
+        .cta-btn::after {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eef2f3 0%, #d9e4f5 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 32px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 40px;
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .service-icon {
+            min-width: 60px;
+            height: 60px;
+            background-color: rgba(15, 76, 129, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .service-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .service-list li::before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Stats Section */
+        .stats {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+
+        .faq-item h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 15px;
+        }
+
+        .faq-item p {
+            color: var(--text-light);
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">正道思达<span>软件</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active">首页</a></li>
+                    <li><a href="#solutions">解决方案</a></li>
+                    <li><a href="#services">核心服务</a></li>
+                    <li><a href="#cases">成功案例</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="cta-btn">免费咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>以技术为基，以价值为核<br>赋能企业数字化转型</h1>
+                <p>正道思达专注于为中小企业提供定制化的ERP管理系统、数据分析平台及云服务解决方案，帮助企业打破数据孤岛，实现业务流程自动化与精细化运营。</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">预约演示</a>
+                    <a href="#solutions" class="btn btn-outline">了解方案</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>我们的核心优势</h2>
+                    <p>深入了解行业痛点，提供切实可行的技术落地路径</p>
+                </div>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>灵活定制开发</h3>
+                        <p>拒绝通用模板的束缚，根据企业实际业务流程进行深度定制，确保软件完美契合业务需求，提升执行效率。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>数据驱动决策</h3>
+                        <p>构建全链路数据监控体系，通过可视化报表实时掌握经营状况，让决策有据可依，规避经营风险。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>安全稳定架构</h3>
+                        <p>采用企业级安全标准，多重数据备份与加密机制，保障企业核心资产的安全，支持7x24小时稳定运行。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>专业服务领域</h2>
+                    <p>从咨询规划到落地实施，提供全生命周期技术支持</p>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">☁️</div>
+                    <div class="service-content">
+                        <h3>企业云服务与部署</h3>
+                        <p>提供私有云、混合云及公有云的迁移与部署服务，帮助企业降低IT维护成本，实现资源的弹性伸缩与快速扩容。</p>
+                        <ul class="service-list">
+                            <li>云资源规划与架构设计</li>
+                            <li>应用系统上云迁移与优化</li>
+                            <li>云安全防护与合规管理</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">🧩</div>
+                    <div class="service-content">
+                        <h3>ERP/CRM 系统定制</h3>
+                        <p>针对进销存管理、客户关系管理、生产制造等核心业务场景，开发高可用、易扩展的定制化软件系统。</p>
+                        <ul class="service-list">
+                            <li>供应链与库存管理系统</li>
+                            <li>财务核算与预算管理模块</li>
+                            <li>客户生命周期管理与营销自动化</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="service-item">
+                    <div class="service-icon">🔗</div>
+                    <div class="service-content">
+                        <h3>系统集成与接口开发</h3>
+                        <p>打通企业内部各业务系统（如OA、HR、财务）以及外部电商平台、支付渠道的数据壁垒，实现数据互通。</p>
+                        <ul class="service-list">
+                            <li>API接口标准化开发与对接</li>
+                            <li>老旧系统现代化改造</li>
+                            <li>第三方SaaS服务集成</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>10+</h3>
+                        <p>行业深耕年数</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>服务企业客户</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>98%</h3>
+                        <p>客户满意度</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24h</h3>
+                        <p>技术支持响应</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>贵公司提供哪些类型的软件服务？</h3>
+                        <p>我们主要提供基于Web端的企业级管理软件定制开发服务，涵盖ERP系统、CRM客户管理、进销存管理以及数据可视化大屏等方向。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>定制开发的周期通常需要多久？</h3>
+                        <p>开发周期取决于项目的复杂程度和需求范围。简单的模块开发通常需要1-2个月，大型复杂系统的全案开发可能需要3-6个月，我们会提供详细的项目排期表。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>系统上线后是否有技术支持？</h3>
+                        <p>我们提供完善的售后服务体系，包含系统维护、数据备份、操作培训以及7x24小时的技术响应支持，确保系统长期稳定运行。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>如何保证数据的安全性？</h3>
+                        <p>我们采用加密存储、多重备份、访问权限控制等安全措施，并定期进行安全审计，符合国家信息安全相关标准。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="contact" style="background-color: var(--secondary-color); padding: 60px 0; text-align: center; color: white;">
+            <div class="container">
+                <h2 style="margin-bottom: 20px; font-size: 28px;">准备好开始您的数字化转型了吗？</h2>
+                <p style="margin-bottom: 30px; opacity: 0.8;">立即联系我们，获取免费的业务诊断与技术方案建议。</p>
+                <a href="mailto:contact@zhengdaosida.com" class="btn btn-primary" style="background-color: var(--accent-color); border-color: var(--accent-color);">联系我们的顾问</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>正道思达</h2>
+                    <p>致力于通过技术创新推动企业高效运营，成为值得信赖的数字化转型合作伙伴。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#solutions">解决方案</a></li>
+                        <li><a href="#services">核心服务</a></li>
+                        <li><a href="#cases">成功案例</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>产品服务</h4>
+                    <ul>
+                        <li><a href="#">ERP管理系统</a></li>
+                        <li><a href="#">CRM客户系统</a></li>
+                        <li><a href="#">数据可视化</a></li>
+                        <li><a href="#">云服务器部署</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul class="contact-info">
+                        <li>📍 北京市海淀区中关村科技园</li>
+                        <li>📞 400-123-4567</li>
+                        <li>✉️ business@zhengdaosida.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 正道思达软件技术有限公司 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+              </html>
