@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="mimiai网友自拍 - 探索真实网络社交与用户分享文化，提供安全、合规的图片浏览体验及社区规范指南。">
+    <meta name="keywords" content="mimiai网友自拍,网友自拍,网络分享,社交平台,图片社区">
+    <title>mimiai网友自拍-真实社交与用户分享文化指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-main: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --border-color: #e5e7eb;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border-color: var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        /* Main Content Grid */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr 300px;
+            gap: 24px;
+            padding: 32px 0;
+        }
+
+        /* Sidebar Left */
+        .sidebar-left {
+            position: sticky;
+            top: 88px;
+            height: fit-content;
+        }
+
+        .menu-list li {
+            margin-bottom: 8px;
+        }
+
+        .menu-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .menu-link:hover, .menu-link.active {
+            background-color: #e0e7ff;
+            color: var(--primary-color);
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border-color);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 160px;
+            background-color: #e5e7eb;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Sidebar Right */
+        .sidebar-right {
+            position: sticky;
+            top: 88px;
+            height: fit-content;
+        }
+
+        .widget {
+            background-color: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .widget-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .rank-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .rank-num {
+            width: 20px;
+            height: 20px;
+            background-color: #f3f4f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+
+        .rank-list li:nth-child(1) .rank-num { background-color: #fee2e2; color: #ef4444; }
+        .rank-list li:nth-child(2) .rank-num { background-color: #ffedd5; color: #f97316; }
+        .rank-list li:nth-child(3) .rank-num { background-color: #fef3c7; color: #eab308; }
+
+        .rank-title {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            padding: 4px 10px;
+            background-color: #f3f4f6;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Safety Notice */
+        .notice-box {
+            background-color: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: var(--radius-md);
+            padding: 16px;
+            color: #92400e;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .notice-icon {
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            padding: 40px 0;
+            margin-top: 40px;
+            color: var(--text-secondary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .sidebar-left, .sidebar-right {
+                position: static;
+                order: -1;
+            }
+            .sidebar-left {
+                margin-bottom: 24px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-inner {
+                height: auto;
+                padding: 12px 0;
+                flex-direction: column;
+                gap: 12px;
+            }
+            .nav-menu {
+                gap: 16px;
+                font-size: 0.85rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .grid-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            mimiai
+        </a>
+        <nav class="nav-menu">
+            <a href="#">首页</a>
+            <a href="#">最新</a>
+            <a href="#">分类</a>
+            <a href="#">排行榜</a>
+            <a href="#">社区</a>
+        </nav>
+        <div class="user-actions">
+            <a href="#" class="btn btn-outline">登录</a>
+            <a href="#" class="btn btn-primary">注册</a>
+        </div>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="container">
+        <h1>mimiai网友自拍</h1>
+        <p>发现真实、多元的社交分享内容。在这里，用户以第一视角记录生活瞬间，分享真实情感与生活态度。</p>
+        <div style="display: flex; gap: 12px; justify-content: center;">
+            <a href="#" class="btn btn-primary" style="background: white; color: var(--primary-color);">开始探索</a>
+            <a href="#" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: white;">发布作品</a>
+        </div>
+    </div>
+</div>
+
+<main class="container main-layout">
+    <!-- Left Sidebar -->
+    <aside class="sidebar-left">
+        <ul class="menu-list">
+            <li><a href="#" class="menu-link active">全部内容</a></li>
+            <li><a href="#" class="menu-link">生活记录</a></li>
+            <li><a href="#" class="menu-link">旅行见闻</a></li>
+            <li><a href="#" class="menu-link">美食探店</a></li>
+            <li><a href="#" class="menu-link">日常穿搭</a></li>
+            <li><a href="#" class="menu-link">宠物萌宠</a></li>
+            <li><a href="#" class="menu-link">运动健身</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <section class="content-area">
+        
+        <div class="section-header">
+            <h2 class="section-title">热门推荐</h2>
+            <div style="font-size: 0.9rem; color: var(--text-secondary);">
+                <span>排序:</span>
+                <a href="#" style="color: var(--primary-color); margin-left: 8px; font-weight: 600;">最新</a>
+                <a href="#" style="margin-left: 8px;">最热</a>
+            </div>
+        </div>
+
+        <div class="grid-gallery">
+            <article class="card">
+                <img src="https://picsum.photos/seed/selfie1/400/320" alt="网友自拍示例" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">周末海边旅行的快乐时光</h3>
+                    <div class="card-meta">
+                        <span>用户: Sunshine_01</span>
+                        <span>2小时前</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/selfie2/400/320" alt="网友自拍示例" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">新买的咖啡机到了，打卡一下</h3>
+                    <div class="card-meta">
+                        <span>用户: CoffeeLover</span>
+                        <span>5小时前</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/selfie3/400/320" alt="网友自拍示例" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">今天的OOTD，大家觉得怎么样？</h3>
+                    <div class="card-meta">
+                        <span>用户: StyleGirl</span>
+                        <span>8小时前</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/selfie4/400/320" alt="网友自拍示例" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">下班路上的晚霞，太美了</h3>
+                    <div class="card-meta">
+                        <span>用户: NightWalker</span>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/selfie5/400/320" alt="网友自拍示例" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">撸猫日常，治愈一下</h3>
+                    <div class="card-meta">
+                        <span>用户: CatMom</span>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="https://picsum.photos/seed/selfie6/400/320" alt="网友自拍示例" class="card-image">
+                <div class="card-body">
+                    <h3 class="card-title">健身房打卡，坚持就是胜利</h3>
+                    <div class="card-meta">
+                        <span>用户: FitLife</span>
+                        <span>2天前</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 32px;">
+            <button class="btn btn-outline" style="width: 100%; max-width: 200px;">加载更多</button>
+        </div>
+
+    </section>
+
+    <!-- Right Sidebar -->
+    <aside class="sidebar-right">
+        <div class="widget">
+            <h4 class="widget-title">安全提示</h4>
+            <div class="notice-box">
+                <span class="notice-icon">⚠️</span>
+                <p style="font-size: 0.85rem; line-height: 1.5;">
+                    请注意保护个人隐私，不要在公开平台发布包含身份证号、住址等敏感信息的照片。网络分享需谨慎。
+                </p>
+            </div>
+        </div>
+
+        <div class="widget">
+            <h4 class="widget-title">热门标签</h4>
+            <div class="tag-cloud">
+                <a href="#" class="tag">#日常生活</a>
+                <a href="#" class="tag">#旅行</a>
+                <a href="#" class="tag">#美食</a>
+                <a href="#" class="tag">#OOTD</a>
+                <a href="#" class="tag">#萌宠</a>
+                <a href="#" class="tag">#健身</a>
+                <a href="#" class="tag">#摄影</a>
+                <a href="#" class="tag">#Vlog</a>
+            </div>
+        </div>
+
+        <div class="widget">
+            <h4 class="widget-title">本周热议</h4>
+            <ul class="rank-list">
+                <li>
+                    <span class="rank-num">1</span>
+                    <span class="rank-title">如何拍出更有氛围感的自拍？</span>
+                </li>
+                <li>
+                    <span class="rank-num">2</span>
+                    <span class="rank-title">分享我的私藏摄影技巧</span>
+                </li>
+                <li>
+                    <span class="rank-num">3</span>
+                    <span class="rank-title">2024年流行穿搭趋势预测</span>
+                </li>
+                <li>
+                    <span class="rank-num">4</span>
+                    <span class="rank-title">新手摄影入门器材推荐</span>
+                </li>
+                <li>
+                    <span class="rank-num">5</span>
+                    <span class="rank-title">周末去哪里人少景美？</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="widget">
+            <h4 class="widget-title">关于我们</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">
+                mimiai致力于为用户提供一个真实、友好、安全的网络分享社区。我们鼓励用户记录生活中的美好瞬间。
+            </p>
+            <a href="#" style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600;">了解更多 &rarr;</a>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>mimiai 社区</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 16px;">分享真实生活，连接你我他。在这里，每一张照片都有故事。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">用户协议</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">如何发布作品</a></li>
+                    <li><a href="#">举报违规内容</a></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">豆瓣小组</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 mimiai 网友自拍分享平台. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
