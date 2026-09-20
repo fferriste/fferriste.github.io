@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>甜蜜的惩罚-情感关系解析与成长指南</title>
+    <meta name="description" content="深度解析情感关系中的‘甜蜜的惩罚’现象，探讨心理机制、相处模式及如何将负面情绪转化为亲密关系的粘合剂，提供实用的情感修复与沟通建议。">
+    <meta name="keywords" content="甜蜜的惩罚,情感关系,亲密关系,心理机制,沟通技巧">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --primary-light: #f8d7da;
+            --primary-dark: #a61e4d;
+            --secondary-color: #6610f2;
+            --bg-color: #f8f9fa;
+            --text-main: #212529;
+            --text-secondary: #6c757d;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .cta-btn:hover {
+            background-color: var(--primary-dark);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-light) 0%, #fff0f6 100%);
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .hero-text .highlight {
+            color: var(--primary-color);
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-hover);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image:hover img {
+            transform: perspective(1000px) rotateY(0) rotateX(0);
+        }
+
+        /* Feature Cards */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Deep Dive / Analysis */
+        .analysis-section {
+            background-color: var(--white);
+        }
+
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .analysis-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .analysis-content p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .step-list {
+            counter-reset: step;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 35px;
+            height: 35px;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .step-item h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .step-item p {
+            font-size: 0.9rem;
+        }
+
+        .analogy-box {
+            background-color: #f1f3f5;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            position: sticky;
+            top: 100px;
+        }
+
+        .analogy-box h3 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .analogy-box ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .analogy-box ul li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Interactive Quiz */
+        .quiz-section {
+            background: linear-gradient(to right, var(--primary-dark), var(--secondary-color));
+            color: var(--white);
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .quiz-question {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 15px;
+        }
+
+        .quiz-btn {
+            background: var(--white);
+            color: var(--text-main);
+            border: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.2s;
+        }
+
+        .quiz-btn:hover {
+            background-color: #f1f3f5;
+            transform: translateX(5px);
+        }
+
+        .quiz-result {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            display: none;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        .toggle-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-main);
+            color: #adb5bd;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .analogy-box {
+                position: static;
+                order: -1;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                <span>情感解析</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#phenomenon" class="active">现象解析</a></li>
+                    <li><a href="#mechanism">心理机制</a></li>
+                    <li><a href="#solutions">相处之道</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <a href="#quiz" class="cta-btn">自我测试</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>理解<strong class="highlight">甜蜜的惩罚</strong>：爱中的依恋与成长</h1>
+                    <p>在亲密关系中，为什么有些冲突反而让彼此更亲密？探索情感互动中的“甜蜜惩罚”机制，学习如何将冲突转化为增进了解的契机。</p>
+                    <a href="#mechanism" class="cta-btn" style="padding: 12px 30px; font-size: 1rem;">深入了解机制</a>
+                </div>
+                <div class="hero-image">
+                    <!-- Using a seed for consistent random image -->
+                    <img src="https://picsum.photos/seed/love2/600/400" alt="情侣在阳光下微笑互动" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Concept Cards -->
+        <section id="phenomenon" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>什么是“甜蜜的惩罚”？</h2>
+                    <p>这并非指真正的伤害，而是一种特殊的情感互动模式。</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"></path><path d="M12 6v6l4 2"></path></svg>
+                        </div>
+                        <h3>时间延迟</h3>
+                        <p>通常表现为在冲突发生后，经过一段冷静期，双方通过和解、道歉或亲密行为来“奖励”彼此，这种延迟的正面反馈让惩罚感转化为甜蜜感。</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </div>
+                        <h3>情感升华</h3>
+                        <p>源于不安全感或对失去的恐惧。通过“惩罚”（争吵或冷战）来测试对方的底线和包容度，若对方未离开，这种恐惧便转化为被爱的安全感。</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon-box">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                        </div>
+                        <h3>沟通深化</h3>
+                        <p>在“惩罚”结束后的和解过程中，双方往往能更深入地表达真实的愤怒、委屈和需求，从而打破表面平静的假象，建立更深层的连接。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Dive Analysis -->
+        <section id="mechanism" class="section analysis-section">
+            <div class="container analysis-grid">
+                <div class="analysis-content">
+                    <h2>背后的心理机制</h2>
+                    <h3>为什么我们会寻求“惩罚”？</h3>
+                    <p>在心理学中，这种行为模式往往与“焦虑型依恋”有关。当个体感到焦虑时，可能会通过制造冲突或“惩罚”伴侣来获取回应。这种“惩罚”本质上是一种<strong>生存策略</strong>——试图通过激怒对方来验证“如果我闹脾气，你还会爱我吗？”</p>
+                    
+                    <div class="step-list">
+                        <div class="step-item">
+                            <h4>1. 触发焦虑</h4>
+                            <p>潜意识里的不安全感被轻微的疏远或误解触发。</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>2. 实施“惩罚”</h4>
+                            <p>通过冷暴力、发脾气或言语攻击来表达不满，试图迫使对方采取行动。</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>3. 期待验证</h4>
+                            <p>内心深处期待对方能够包容这种负面情绪，并展现出更多的在乎。</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>4. 获得“甜蜜”</h4>
+                            <p>当对方没有离开，反而来哄自己时，焦虑被安抚，惩罚感瞬间转化为被爱的甜蜜。</p>
+                        </div>
+                    </div>
+                </div>
+                <aside class="analogy-box">
+                    <h3>生活中的类比</h3>
+                    <p>就像小孩子为了得到父母的关注，可能会故意打翻牛奶。虽然这造成了“麻烦”（惩罚），但其核心目的是为了获得父母的“抱抱”（甜蜜）。成年人将这种幼稚的机制带入了亲密关系。</p>
+                    <br>
+                    <ul>
+                        <li>正面反馈：争吵后的拥抱。</li>
+                        <li>负面反馈：冷战后的疏离。</li>
+                        <li>核心需求：确认“我在你心里”。</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Solutions / How to Deal -->
+        <section id="solutions" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>如何健康地处理这种互动？</h2>
+                    <p>将“甜蜜的惩罚”转化为健康的冲突解决模式。</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card" style="border-top: 4px solid var(--primary-color);">
+                        <h3>及时沟通需求</h3>
+                        <p>不要通过“惩罚”来传递不满。直接告诉对方：“当你沉默时，我会感到焦虑，我希望你能抱抱我。”</p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--secondary-color);">
+                        <h3>区分行为与感受</h3>
+                        <p>明确告诉对方，你生气的不是他/她这个人，而是“被忽视”这个行为。这能减少对方的防御心理。</p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--primary-color);">
+                        <h3>建立安全感</h3>
+                        <p>通过日常的小承诺和陪伴，减少“惩罚”发生的频率。当安全感充足时，对惩罚的需求自然会降低。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz -->
+        <section id="quiz" class="section quiz-section">
+            <div class="container">
+                <div class="section-header" style="color: white;">
+                    <h2 style="color: white;">情感互动测试</h2>
+                    <p style="color: rgba(255,255,255,0.8);">看看你是否陷入了“甜蜜的惩罚”循环？</p>
+                </div>
+                <div class="quiz-container">
+                    <div class="quiz-question" id="quiz-q">冲突发生后，你通常的反应是？</div>
+                    <div class="quiz-options" id="quiz-options">
+                        <button class="quiz-btn" onclick="checkAnswer('a')">A. 立刻爆发，言语攻击，甚至冷战</button>
+                        <button class="quiz-btn" onclick="checkAnswer('b')">B. 虽然生气，但会等待对方来哄</button>
+                        <button class="quiz-btn" onclick="checkAnswer('c')">C. 试图理性沟通，表达不满</button>
+                    </div>
+                    <div class="quiz-result" id="quiz-result"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>常见问题解答</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>甜蜜的惩罚是病态的吗？</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            这是一种常见的心理防御机制，并不一定代表病态。但如果这种模式导致频繁的争吵、冷战或伤害，可能需要反思是否缺乏健康的沟通技巧或存在深层的依恋焦虑。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>如何判断对方是否在利用“甜蜜的惩罚”控制我？</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            如果对方在冲突后总是以“我不理你”作为要挟，且只有在对方极度顺从或讨好时才恢复关系，这可能是情感操控的迹象。健康的“甜蜜惩罚”应当是双向的、以沟通为目的的。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>争吵后如何快速恢复甜蜜？</span>
+                            <span class="toggle-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <strong>第一步：打破僵局。</strong> 不需要道歉，只需要一个微笑或一个小动作。<strong>第二步：表达脆弱。</strong> 告诉对方刚才的冲突让你感到受伤，而不是指责。<strong>第三步：肢体接触。</strong> 拥抱是解决冷战的强力粘合剂。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">专注于情感关系研究与心理成长，帮助读者建立更健康、更亲密的连接。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>相关栏目</h4>
+                    <ul>
+                        <li><a href="#">沟通技巧</a></li>
+                        <li><a href="#">依恋类型</a></li>
+                        <li><a href="#">亲密关系</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>法律声明</h4>
+                    <ul>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">使用条款</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 情感解析平台. All rights reserved. 本站内容仅供教育参考，不构成医疗建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Quiz Logic
+        function checkAnswer(answer) {
+            const resultDiv = document.getElementById('quiz-result');
+            const optionsDiv = document.getElementById('quiz-options');
+            const questionDiv = document.getElementById('quiz-q');
+
+            resultDiv.style.display = 'block';
+            optionsDiv.style.display = 'none';
+
+            if (answer === 'b') {
+                resultDiv.innerHTML = '<strong>分析结果：</strong> 你可能处于“焦虑型依恋”的边缘。期待对方来哄你是一种常见的防御机制，但这会无形中增加对方的压力。尝试直接表达你的需求，而不是等待惩罚后的奖励。';
+                resultDiv.style.backgroundColor = 'rgba(255, 200, 200, 0.3)';
+            } else if (answer === 'a') {
+                resultDiv.innerHTML = '<strong>分析结果：</strong> 你倾向于通过攻击或冷战来应对冲突。这虽然能暂时发泄情绪，但容易让关系陷入恶性循环。试着在情绪激动时按下暂停键，冷静后再沟通。';
+                resultDiv.style.backgroundColor = 'rgba(255, 200, 200, 0.3)';
+            } else {
+                resultDiv.innerHTML = '<strong>分析结果：</strong> 你拥有健康的沟通意识。直接表达不满而不是通过“惩罚”来索取关注，是建立长久亲密关系的关键。继续保持这种成熟的互动模式。';
+                resultDiv.style.backgroundColor = 'rgba(200, 255, 200, 0.3)';
+            }
+        }
+    </script>
+</body>
+</html>
