@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="数学小游戏 - 在线趣味数学学习平台，提供加减乘除、逻辑推理、几何图形等多种类型的数学益智游戏，适合学生、儿童及数学爱好者锻炼脑力。">
+    <meta name="keywords" content="数学小游戏,趣味数学,在线数学游戏,益智游戏,儿童数学">
+    <title>数学小游戏 - 趣味益智与在线数学挑战</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #50E3C2;
+            --accent-color: #FF6B6B;
+            --bg-color: #F5F7FA;
+            --card-bg: #FFFFFF;
+            --text-main: #2C3E50;
+            --text-sub: #7F8C8D;
+            --border-radius: 12px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Nav */
+        header {
+            background: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-sub);
+        }
+
+        /* Game Grid */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .game-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            height: 180px;
+            background-color: #e0e0e0;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: #E3F2FD;
+            color: var(--primary-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .play-btn {
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .play-btn:hover {
+            background-color: #357ABD;
+        }
+
+        .difficulty {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .difficulty-stars {
+            color: #FFC107;
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+            padding: 60px 20px;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .feature-item {
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .feature-item p {
+            color: var(--text-sub);
+            font-size: 0.95rem;
+        }
+
+        /* Guide Section */
+        .guide-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .guide-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .guide-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+        }
+
+        .guide-text p {
+            margin-bottom: 15px;
+            color: var(--text-sub);
+        }
+
+        .guide-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .guide-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--text-sub);
+        }
+
+        .guide-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .guide-image {
+            flex: 1;
+            min-width: 300px;
+            background: #f0f2f5;
+            border-radius: var(--border-radius);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-sub);
+            font-size: 1.2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2C3E50;
+            color: white;
+            padding: 50px 20px 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #BDC3C7;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            color: #7F8C8D;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 15px;
+            }
+
+            nav {
+                display: none; /* Simplified for static demo */
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .game-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span>📐</span> 数学小游戏
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">算术挑战</a></li>
+                    <li><a href="#">逻辑推理</a></li>
+                    <li><a href="#">几何迷宫</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>让数学变得简单有趣</h1>
+        <p>通过精心设计的互动游戏，在轻松的氛围中提升计算能力与逻辑思维。无论你是学生还是数学爱好者，这里都有适合你的挑战。</p>
+        <a href="#games" class="cta-button">开始挑战</a>
+    </section>
+
+    <main id="games">
+        <div class="section-title">
+            <h2>热门数学游戏</h2>
+            <p>精选益智游戏，寓教于乐</p>
+        </div>
+
+        <div class="game-grid">
+            <!-- Game 1 -->
+            <article class="game-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/math1/400/250" alt="闪电算术">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">算术</span>
+                    <h3 class="card-title">闪电算术挑战</h3>
+                    <p class="card-desc">在限定时间内快速完成加减乘除运算，锻炼大脑反应速度，适合所有年龄段。</p>
+                    <div class="card-footer">
+                        <span class="difficulty">
+                            <span class="difficulty-stars">★★★</span> 难度：中等
+                        </span>
+                        <a href="#" class="play-btn">立即开始</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Game 2 -->
+            <article class="game-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/math2/400/250" alt="数字迷宫">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">逻辑</span>
+                    <h3 class="card-title">数字迷宫探险</h3>
+                    <p class="card-desc">通过寻找数字规律和逻辑线索，解开复杂的迷宫谜题，体验解谜的乐趣。</p>
+                    <div class="card-footer">
+                        <span class="difficulty">
+                            <span class="difficulty-stars">★★★★</span> 难度：高
+                        </span>
+                        <a href="#" class="play-btn">立即开始</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Game 3 -->
+            <article class="game-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/math3/400/250" alt="分数大作战">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">进阶</span>
+                    <h3 class="card-title">分数大作战</h3>
+                    <p class="card-desc">学习并运用分数、小数和百分数的运算技巧，在战斗中掌握数学概念。</p>
+                    <div class="card-footer">
+                        <span class="difficulty">
+                            <span class="difficulty-stars">★★★★★</span> 难度：极高
+                        </span>
+                        <a href="#" class="play-btn">立即开始</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Game 4 -->
+            <article class="game-card">
+                <div class="card-image">
+                    <img src="https://picsum.photos/seed/math4/400/250" alt="几何拼图">
+                </div>
+                <div class="card-content">
+                    <span class="card-tag">几何</span>
+                    <h3 class="card-title">几何拼图大师</h3>
+                    <p class="card-desc">通过旋转和组合不同的几何图形，构建出指定的形状，培养空间想象力。</p>
+                    <div class="card-footer">
+                        <span class="difficulty">
+                            <span class="difficulty-stars">★★★</span> 难度：中等
+                        </span>
+                        <a href="#" class="play-btn">立即开始</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="features">
+            <div class="section-title">
+                <h2>为什么选择我们？</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🚀</div>
+                    <h3>极速响应</h3>
+                    <p>无需下载，直接在浏览器中运行，加载速度快，体验流畅。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎓</div>
+                    <h3>科学分级</h3>
+                    <p>根据年龄和能力自动匹配难度，循序渐进，防止挫败感。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏆</div>
+                    <h3>成就系统</h3>
+                    <p>收集徽章和积分，记录每一次进步，激发持续学习的动力。</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <h2>使用指南</h2>
+        </div>
+
+        <div class="guide-container">
+            <div class="guide-text">
+                <h3>如何通过游戏提升数学能力？</h3>
+                <p>数学不仅仅是计算，更是一种思维方式。我们的游戏通过模拟真实场景，帮助玩家建立数感。对于小学生，我们重点强化基础四则运算；对于初中生，引入方程与代数概念；对于成人，则侧重逻辑推理与速算技巧。</p>
+                <ul class="guide-list">
+                    <li>选择适合自己当前水平的游戏开始。</li>
+                    <li>尝试挑战更高难度，突破舒适区。</li>
+                    <li>记录错题，分析错误原因，针对性练习。</li>
+                    <li>每日坚持 15 分钟，效果显著。</li>
+                </ul>
+            </div>
+            <div class="guide-image">
+                <div style="text-align: center;">
+                    <div style="font-size: 80px; margin-bottom: 20px;">🎮</div>
+                    <p>随时随地，想学就学</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">平台介绍</a></li>
+                    <li><a href="#">团队故事</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>游戏分类</h4>
+                <ul>
+                    <li><a href="#">加减乘除</a></li>
+                    <li><a href="#">逻辑谜题</a></li>
+                    <li><a href="#">几何图形</a></li>
+                    <li><a href="#">应用题模拟</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">常见问题</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">使用条款</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>订阅更新</h4>
+                <p style="color: #BDC3C7; margin-bottom: 10px;">获取最新游戏动态和数学学习技巧。</p>
+                <div style="display: flex;">
+                    <input type="email" placeholder="您的邮箱" style="padding: 8px; border-radius: 4px 0 0 4px; border: none; width: 100%;">
+                    <button style="padding: 8px 12px; background: var(--primary-color); border: none; color: white; border-radius: 0 4px 4px 0; cursor: pointer;">订阅</button>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 数学小游戏平台 版权所有</p>
+        </div>
+    </footer>
+
+</body>
+</html>
