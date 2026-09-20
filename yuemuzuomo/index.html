@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="岳母坐摩托 - 搜集并展示摩托车骑行文化、亲子出行摄影技巧、安全驾驶指南及相关社区讨论。">
+    <meta name="keywords" content="岳母坐摩托,摩托车骑行,亲子骑行,摩托车摄影,骑行装备">
+    <title>岳母坐摩托 - 亲子出行与摩托车骑行指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-light: #f8f9fa;
+            --text-main: #333;
+            --text-secondary: #666;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: var(--spacing-unit) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://picsum.photos/seed/motorcycle/1600/600') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Layout */
+        main {
+            flex: 1;
+            padding: 40px 0;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Featured Section */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            font-size: 0.85rem;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #e1e4e8;
+        }
+
+        .sidebar-widget h3 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .list-group {
+            list-style: none;
+        }
+
+        .list-group li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e1e4e8;
+        }
+
+        .list-group li:last-child {
+            border-bottom: none;
+        }
+
+        .list-group a {
+            text-decoration: none;
+            color: var(--text-main);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .list-group a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: #fff;
+            padding: 40px 0;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+        }
+
+        .guide-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .guide-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .guide-text p {
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        .checklist {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .checklist li {
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .guide-img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 40px 0;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">岳母<span>坐摩托</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#featured">精选文章</a></li>
+                    <li><a href="#guide">出行指南</a></li>
+                    <li><a href="#community">骑行社区</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>岳母坐摩托：共享亲子骑行时光</h1>
+            <p>探索摩托车带家人出行的安全技巧、装备选择与路线推荐，记录每一次难忘的家庭旅程。</p>
+            <a href="#guide" class="btn">开始阅读指南</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="grid-layout">
+            <!-- Main Content -->
+            <div class="content-area">
+                <section id="featured">
+                    <div class="section-title">
+                        <h2>热门骑行故事</h2>
+                        <a href="#" style="font-size: 0.9rem; color: var(--accent-color); text-decoration: none;">查看更多 &rarr;</a>
+                    </div>
+                    <div class="card-grid">
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/moto1/400/250" alt="亲子骑行风景" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">亲子出行</span>
+                                <h3 class="card-title">周末带岳母骑行环湖：关于舒适度的改造</h3>
+                                <p class="card-desc">为了照顾岳母的舒适度，我们加装了风挡、增高垫和储物箱，这段旅程成为了全家人最美好的回忆。</p>
+                                <div class="card-footer">阅读: 2,340 · 评论: 45</div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/moto2/400/250" alt="摩托车装备" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">装备评测</span>
+                                <h3 class="card-title">岳母坐摩托安全第一：头盔与护具选购指南</h3>
+                                <p class="card-desc">安全永远是第一位的。本文详细解析了适合中老年人的头盔选择、护目镜的重要性以及防晒装备。</p>
+                                <div class="card-footer">阅读: 1,890 · 评论: 32</div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/moto3/400/250" alt="摩托车驾驶" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">驾驶技巧</span>
+                                <h3 class="card-title">如何让岳母爱上摩托车？心态引导与循序渐进</h3>
+                                <p class="card-desc">从副驾体验开始，逐步过渡到带后座。分享几个让长辈消除恐惧、享受风的技巧。</p>
+                                <div class="card-footer">阅读: 3,100 · 评论: 67</div>
+                            </div>
+                        </article>
+                        <article class="card">
+                            <img src="https://picsum.photos/seed/moto4/400/250" alt="公路旅行" class="card-img">
+                            <div class="card-body">
+                                <span class="card-tag">路线推荐</span>
+                                <h3 class="card-title">适合家庭出行的最美沿海公路：沿海G3线</h3>
+                                <p class="card-desc">路况平稳、风景优美且服务设施完善，这条路线是带岳母短途旅行的绝佳选择。</p>
+                                <div class="card-footer">阅读: 1,520 · 评论: 21</div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="guide-section">
+                    <div class="guide-container">
+                        <div class="guide-text">
+                            <h2>带岳母骑行的注意事项</h2>
+                            <p>带长辈骑行不仅是体力的考验，更是耐心的挑战。为了让旅程愉快且安全，请务必注意以下几点：</p>
+                            <ul class="checklist">
+                                <li><strong>车辆选择：</strong> 优先选择舒适度高的中大型巡航车或踏板车，避免运动型跑车。</li>
+                                <li><strong>高度调整：</strong> 确保后座高度适中，避免岳母膝盖弯曲过大，影响血液循环。</li>
+                                <li><strong>风噪控制：</strong> 高速行驶时风噪较大，建议加装优质风挡，并准备降噪耳机。</li>
+                                <li><strong>休息频率：</strong> 长辈体能恢复较慢，每骑行1小时务必安排停车休息。</li>
+                            </ul>
+                            <a href="#" class="btn" style="background-color: var(--primary-color);">查看完整安全手册</a>
+                        </div>
+                        <img src="https://picsum.photos/seed/guide/600/400" alt="骑行安全示意图" class="guide-img">
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <h3>热门话题</h3>
+                    <ul class="list-group">
+                        <li><a href="#">#摩托车改装</a> <span>1.2w</span></li>
+                        <li><a href="#">#岳母的第一次</a> <span>8.5k</span></li>
+                        <li><a href="#">#骑行装备清单</a> <span>6.3k</span></li>
+                        <li><a href="#">#家庭路线规划</a> <span>4.1k</span></li>
+                        <li><a href="#">#老年代步车</a> <span>3.9k</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>装备推荐</h3>
+                    <ul class="list-group">
+                        <li><a href="#">高品质头戴式耳机</a> <span>降噪必备</span></li>
+                        <li><a href="#">后座增高垫</a> <span>舒适提升</span></li>
+                        <li><a href="#">便携式保温杯架</a> <span>贴心设计</span></li>
+                        <li><a href="#">防风护膝套装</a> <span>保暖防寒</span></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3>关于“岳母坐摩托”</h3>
+                    <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">
+                        这是一个专注于摩托车家庭出行的社区。我们致力于分享如何让长辈安全、舒适地享受骑行的乐趣。
+                    </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>岳母坐摩托</h4>
+                    <p style="font-size: 0.9rem; color: #bdc3c7;">记录每一次家庭骑行，分享安全与舒适的出行经验。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">骑行指南</a></li>
+                        <li><a href="#">装备商城</a></li>
+                        <li><a href="#">路线地图</a></li>
+                        <li><a href="#">社区论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">投稿合作</a></li>
+                        <li><a href="#">商务洽谈</a></li>
+                        <li><a href="#">用户反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 岳母坐摩托. All Rights Reserved. 仅供展示使用.
+            </div>
+        </div>
+    </footer>
+
+</body>
+                                                              </html>
